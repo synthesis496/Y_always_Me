@@ -4,7 +4,7 @@
 **Architecture Inventor:** Chutiphong Bunloed (Buriram, Thailand)  
 **Copyright © 2026 Chutiphong Bunloed.** All Rights Reserved.  
 **ORCID:** [0009-0003-4295-7521](https://orcid.org) | **DOI:** [10.5281/zenodo.23253826](https://doi.org)
-
+**e-mail:** synthesis496@gmail.com
 
 ## Architectural Paradigm
 
