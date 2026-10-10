@@ -35,7 +35,7 @@ System resource scheduling and temporal evolution are locked to a deterministic,
  aVerification & Validation
 
 The architecture includes rigorous programmatic guarantees implemented inside its mathematical test matrices:
-*   **Volumetric Mirror Symmetries:** Validates that spatial transformations (R_1, R_2, R_3$) adhere to strict involutive and cyclic properties, achieving perfect balance on the infinite plane.
+*   **Volumetric Mirror Symmetries:** Validates that spatial transformations  adhere to strict involutive and cyclic properties, achieving perfect balance on the infinite plane.
 *   **Bounded Attractor Constraints:** Proves that non-linear self-healing functions successfully bound field density growth, preventing energy divergence across open domains.
 *   **Performance Determinism:** Benchmarked for low-overhead execution using spatial parallelism to verify sub-millisecond execution scales.
 
