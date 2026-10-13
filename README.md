@@ -1,5 +1,5 @@
 # Honeycomb Photonic Quantum Field Architecture (HPQF)
-## Infinite-Domain Qubit-Free Topological Computing Engine
+## Infinite-Domain Fractal Fibonacci time Topological Computing Engine
 
 **Architecture Inventor:** Chutiphong Bunloed (Buriram, Thailand)  
 **Copyright © 2026 Chutiphong Bunloed.** All Rights Reserved.  
