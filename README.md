@@ -28,7 +28,7 @@ In conventional quantum systems, observation collapses the superposition state. 
 ### 4. Autonomous Field Dissipative Correction (Zero-Overhead QEC)
 Instead of allocating massive arrays of ancilla qubits for Error Correction (QEC), HPQF relies on intrinsic, localized non-linear field-healing dynamics. Fluctuations and noise are naturally dampened, continuously driving the field wavefunction back into a stable bound state via geometric attractors.
 
-### 5. Quasi-Periodic Fibonacci Gating
+### 5. Quasi-Periodic Fibonacci time
 System resource scheduling and temporal evolution are locked to a deterministic, non-periodic sequence based on golden-ratio metrics. This provides a stable time-gating environment that prevents resonance destruction across the honeycomb lattice structure.
 
 
