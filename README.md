@@ -2,8 +2,11 @@
 ## Infinite-Domain Fractal Fibonacci time Topological Computing Engine
 
 **Architecture Inventor:** Chutiphong Bunloed (Buriram, Thailand)  
+
 **Copyright © 2026 Chutiphong Bunloed.** All Rights Reserved.  
-**ORCID:** [0009-0003-4295-7521](https://orcid.org) | **DOI:** [10.5281/zenodo.23253826](https://doi.org)
+
+**ORCID:** [0009-0003-4295-7521](https://orcid.org) |
+
 **e-mail:** synthesis496@gmail.com
 
 ## Architectural Paradigm
@@ -46,7 +49,7 @@ The architecture includes rigorous programmatic guarantees implemented inside it
   title        = {Honeycomb Photonic Quantum Field Architecture in Infinite Domains},
   year         = {2026},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.23253826},
+  doi          = {10.5281/zenodo.23391571},
   url          = {https://doi.org}
 }
 ```
