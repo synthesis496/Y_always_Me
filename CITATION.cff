@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software or framework, please cite it as below."
+authors:
+  - family-names: "Bunloed"
+    given-names: "Chutiphong"
+    orcid: "https://orcid.org"
+title: "Y_always_Me: Honeycomb Photonic Quantum Field Architecture (HPQF)"
+version: "1.0.0"
+doi: "10.5281/zenodo.23391571"
+date-released: "2026-10-26"
+url: "https://github.com/synthesis496/Y_always_Me"
