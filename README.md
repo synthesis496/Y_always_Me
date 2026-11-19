@@ -1,55 +1,66 @@
-# Honeycomb Photonic Quantum Field Architecture (HPQF)
-## Infinite-Domain Fractal Fibonacci time Topological Computing Engine
+# Y_always_Me
 
-**Architecture Inventor:** Chutiphong Bunloed (Buriram, Thailand)  
+A small Python codebase for experimenting with a discrete, one-dimensional honeycomb-field model with Fibonacci-timed pulse envelopes, mirror operators, nonlinear field terms, and a complex attractor map.
 
-**Copyright © 2026 Chutiphong Bunloed.** All Rights Reserved.  
+> **Scope:** The repository contains numerical Python code and a test helper. The code does not implement or demonstrate a physical photonic or quantum-computing system, and the finite array used by the model is a discrete grid rather than an infinite domain.
 
-**ORCID:** [0009-0003-4295-7521](https://orcid.org) |
+![Honeycomb field illustration](fhf_pic.jpg)
 
-**e-mail:** synthesis496@gmail.com
+## Repository contents
 
-## Architectural Paradigm
+- [`honey_product.py`](honey_product.py) — defines `HoneycombField`, the main NumPy-based model. It provides Fibonacci numbers and pulse envelopes, golden-ratio scaling, mirror transforms, gated field updates, an attractor map and trajectory, a spectrum calculation, and helpers for evolving a field and measuring norm growth.
+- [`test.py`](test.py) — contains a separate `_H` helper and `TestSuite` with checks for Fibonacci values, grid boundaries, mirror properties, and basic finiteness/boundedness conditions. It is not a test of `HoneycombField`.
+- [`demo_honey.py`](demo_honey.py) — defines plotting methods for the grid, Fibonacci sequence, pulse envelope, golden scaling, mirror operations, healing term, attractor trajectory, and `MS` transform.
+- [`benchmark_hon.py`](benchmark_hon.py) — defines timing methods for selected model operations.
+- [`fhf_pic.jpg`](fhf_pic.jpg) — image included in this repository and displayed above.
 
-The **Honeycomb Photonic Quantum Field (HPQF)** represents a mathematical breakthrough in non-von Neumann and quantum-alternative computing. Operating on an **Infinite Domain (\(\infty\)-Domain)**, HPQF completely bypasses the physical and algorithmic constraints of traditional qubit-based quantum computers. 
+## Requirements
 
-Instead of manipulating discrete, noise-sensitive qubits through quantum gates, HPQF executes continuous field-based operations across an unbounded topological Hilbert space projection, utilizing structural symmetries to govern complex quantum-analog states.
+- Python 3
+- NumPy for `honey_product.py` and `test.py`
+- Matplotlib is additionally needed for the plotting code in `demo_honey.py`
 
----
+Install the dependencies with:
 
-##  Key Architectural Pillars & Benefits
-
-### 1. Unbounded Infinite Domain (\(\infty\)-Domain) Operations
-The core algebraic mechanics of HPQF are formulated over an infinite spatial and state domain. The implementation leverages highly optimized discrete truncations (finite grid mappings) to represent global wavefunctions, maintaining mathematical consistency and topological properties regardless of the scaled grid boundaries ($L \to \infty$).
-
-### 2. Qubit-Free Collective States
-By computing directly on the **Global Amplitude** and **Global Phase** of a unified photonic field, the architecture eliminates the physical interconnect overhead, state entanglement tracking, and scaling bottlenecks inherent in multi-qubit systems.
-
-### 3. Non-Destructive Invariance Tracker (Free Measurement)
-In conventional quantum systems, observation collapses the superposition state. HPQF utilizes continuous macro-state monitoring, allowing real-time tracking of systemic field dynamics and spectra without disrupting or collapsing the underlying computational medium.
-
-### 4. Autonomous Field Dissipative Correction (Zero-Overhead QEC)
-Instead of allocating massive arrays of ancilla qubits for Error Correction (QEC), HPQF relies on intrinsic, localized non-linear field-healing dynamics. Fluctuations and noise are naturally dampened, continuously driving the field wavefunction back into a stable bound state via geometric attractors.
-
-### 5. Quasi-Periodic Fibonacci time
-System resource scheduling and temporal evolution are locked to a deterministic, non-periodic sequence based on golden-ratio metrics. This provides a stable time-gating environment that prevents resonance destruction across the honeycomb lattice structure.
-
-
- aVerification & Validation
-
-The architecture includes rigorous programmatic guarantees implemented inside its mathematical test matrices:
-*   **Volumetric Mirror Symmetries:** Validates that spatial transformations  adhere to strict involutive and cyclic properties, achieving perfect balance on the infinite plane.
-*   **Bounded Attractor Constraints:** Proves that non-linear self-healing functions successfully bound field density growth, preventing energy divergence across open domains.
-*   **Performance Determinism:** Benchmarked for low-overhead execution using spatial parallelism to verify sub-millisecond execution scales.
-
-
-```bibtex
-@misc{bunloed2026honeycomb,
-  author       = {Chutiphong Bunloed},
-  title        = {Honeycomb Photonic Quantum Field Architecture in Infinite Domains},
-  year         = {2026},
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.23391571},
-  url          = {https://doi.org}
-}
+```bash
+python -m pip install numpy matplotlib
 ```
+
+## Using the main model
+
+`HoneycombField` defaults to a grid with indices from `-64` to `64` (129 sites). For example:
+
+```python
+import numpy as np
+from honey_product import HoneycombField
+
+field = HoneycombField()
+x0 = np.exp(-(field.idx ** 2) / 100.0).astype(complex)
+
+print("Fibonacci values:", field.fib(10))
+print("Pulse envelope at t=1:", field.pulse(1.0))
+print("Mirror-cycle residual:", field.residual(x0))
+
+x_final = field.evolve(x0, t_final=1.0)
+print("Norm growth:", field.norm_growth(x0, t_final=1.0))
+```
+
+The main implementation uses a finite-difference-style explicit update in `evolve`; its default time step is `0.01`. Model parameters such as `L`, `tau0`, `alpha`, `gamma`, `a`, `beta`, and `C` can be provided when constructing `HoneycombField`.
+
+## Tests and auxiliary scripts
+
+The test helper can be exercised interactively:
+
+```python
+from test import TestSuite
+
+results = TestSuite().run()
+for name, passed in results.items():
+    print(f"{name}: {passed}")
+```
+
+`demo_honey.py` and `benchmark_hon.py` define classes and methods, but they do not include a command-line entry point. In the checked-in code, both refer to `_H`, which is not defined or imported in those files; the test helper defines `_H` separately. Consequently, those modules need that dependency resolved before their classes can be instantiated as written.
+
+## License and citation
+
+The repository includes an [AGPL-3.0 license](LICENSE). Citation metadata is available in [`CITATION.cff`](CITATION.cff), including the DOI `10.5281/zenodo.23391571`.
